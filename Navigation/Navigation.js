@@ -3,13 +3,20 @@
 
 import { createStackNavigator,createAppContainer } from 'react-navigation'
 
-import Settings from '../Components/Settings'
-import Play from '../Components/Play'
+import Settings from '../Components/Settings/Settings'
 import Main from '../Components/Main'
+import Game from '../Components/Game/Game'
+import Players from '../Components/Players/Players'
 
 const SearchStackNavigator = createStackNavigator({
 
+  Main: {
+    screen: Main
+  },
 
+  Game: {
+    screen: Game
+  },
 
   Settings: { // Ici j'ai appelé la vue "Search" mais on peut mettre ce que l'on veut. C'est le nom qu'on utilisera pour appeler cette vue
 
@@ -17,14 +24,15 @@ const SearchStackNavigator = createStackNavigator({
 
     navigationOptions: {
 
-      title: 'Rechercherds'
+      title: 'Poids couleur'
 
     }
 
   },
-  Play: {  // same as for Search
-    screen: Play
+  Players: {
+    screen: Players
   }
+
 
 })
 

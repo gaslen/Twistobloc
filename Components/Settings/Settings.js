@@ -5,7 +5,7 @@ import React from 'react'
 
 import { StyleSheet, View, TextInput, Button, Text, FlatList } from 'react-native'
 
-import colors from "../Helpers/colors"
+import colors from "../../Helpers/colors"
 
 import ColorItem from "./ColorsItems"
 
@@ -13,12 +13,6 @@ import ColorItem from "./ColorsItems"
 
 class Settings extends React.Component {
 
-  _displayDetailForFilm = (idFilm) => {
-
-  console.log("Display film with id " + idFilm)
-  this.props.navigation.navigate("Play", {color: idFilm})
-
-  }
 
   render() {
 
@@ -26,17 +20,13 @@ class Settings extends React.Component {
 
       <View style={styles.main_container}>
 
-        <TextInput style={styles.textinput} placeholder='Titre du film'/>
-
-        <Button title='Rechercher' onPress={() => {}}/>
-
         <FlatList
 
           data={colors}
 
           keyExtractor={(item) => item.id.toString()}
 
-          renderItem={({item}) => <ColorItem color={item} displayDetailForFilm={this._displayDetailForFilm}/>}
+          renderItem={({item}) => <ColorItem color={item}/>}
 
         />
         <View style={flex=1,backgroundColor="red"}>

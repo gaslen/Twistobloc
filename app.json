@@ -1,16 +1,16 @@
 {
   "expo": {
     "name": "TwistoBloc",
-    "slug": "YourProject",
+    "icon": "./screenshots/squared_banana.png",
+    "slug": "twistobloc",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
       "ios",
       "android"
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -22,6 +22,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.gastocompany.TwistoBloc"
+    },
     "ios": {
       "supportsTablet": true
     }
