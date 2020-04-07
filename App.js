@@ -1,11 +1,6 @@
-// App.js
-
-
-import React from 'react'
-import {StyleSheet, View, Text} from 'react-native'
-import SearchStackNavigator from './Navigation/Navigation'
-
-
+import React from 'react';
+// import SearchStackNavigator from './Navigation/Navigation'
+import SearchStackNavigator from './src/Navigation'
 
 
 export default class App extends React.Component {

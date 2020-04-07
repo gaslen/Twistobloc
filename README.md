@@ -1,25 +1,44 @@
 
 # Presentation
 
-With Twistobloc, you can play Twister on a climbing wall :)
+With Twistobloc, you can play Twister on a climbing wall ! Currently only game 1 implemented. 
+
+# To launch on an Android device using expo
+Install [Node.js](https://nodejs.org/en/download/), downlad expo app on the device and install expo.
+```
+npm install -g expo-cli
+```
+
+```
+expo install react-navigation-stack react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo start
+```
+
+# To install the current apk
+
+Download it [here](https://drive.google.com/open?id=1_WR37DlYN3VY4skH_ra8x8_j1O478n1n) and install it using an apk installer.
+
 
 # TODO
 
-1) Handle players, counters, scores
+*  Handle players, counters, scores
 
-2) Save data when the app shuts down
+* Add games 2 & 3
 
-3) Read actions with microphone
+*  Save data when the app shuts down
 
-5) Clean code (eg subclasses in Main)
+* Read actions with microphone
 
-6) Explicitly tell that grey means free in color menu
+* Follow this code organization: https://thoughtbot.com/blog/structure-for-styling-in-react-native
 
-# Main screen
-![Alt text](./screenshots/main_screen.jpg?raw=true  "main")
+* FR/EN mode
 
-# Colors
-![Alt text](./screenshots/colors.jpg?raw=true "colors")
+ * Instruction manual
 
-# Game
-![Alt text](./screenshots/game.jpg?raw=true "game")
+# Game 1
+It consists in a twister game on a climbing wall. The player starts on the wall with the holds they want. Someone uses this app to tell him his next move.
+
+Set the different color weights in *Couleurs* according to the different color routes present in your climbing gym. Grey can be used as a joker. Then launch the game with play. 
+
+In game, tap on the screen to get the next action. 
+
