@@ -4,34 +4,36 @@
 import {createAppContainer } from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 
-import Settings from './Components/Settings/Settings'
+import Settings1 from './Components/Settings/Settings1'
 import Main from './Components/Main'
+import SubMenu from './Components/submenu'
 import Game1 from './Components/Games/Game1'
-import Game from './Components/Games/Game1/Game'
+import Game2 from './Components/Games/Game2'
 import Players from './Components/Players/Players'
-import Rules from './Components/Games/Game1/Rules'
+import Rules1 from './Components/Rules/Rules1'
+import Rules2 from './Components/Rules/Rules2'
 
 const SearchStackNavigator = createStackNavigator({
 
   Main: {
     screen: Main
   },
-  Game1: {
-    screen: Game1
-  },
-  Game2: {
-    screen: Game1
-  },
-  Game3: {
-    screen: Game1
+  SubMenu: {
+    screen: SubMenu
   },
 
-  Game: {
-    screen: Game
+  Game1: {
+    screen: Game1,
+
+    navigationOptions: {
+
+      title: 'Jeu'
+
+    }
   },
 
   Rules1: {
-    screen: Rules,
+    screen: Rules1,
 
     navigationOptions: {
 
@@ -40,13 +42,42 @@ const SearchStackNavigator = createStackNavigator({
     }
   },
 
-  Settings: { // Ici j'ai appelé la vue "Search" mais on peut mettre ce que l'on veut. C'est le nom qu'on utilisera pour appeler cette vue
-
-    screen: Settings,
+  Settings1: {
+    screen: Settings1,
 
     navigationOptions: {
 
-      title: 'Poids couleur'
+      title: 'Parametres'
+
+    }
+
+  },
+  Game2: {
+    screen: Game2,
+
+    navigationOptions: {
+
+      title: 'Jeu'
+
+    }
+  },
+
+  Rules2: {
+    screen: Rules2,
+
+    navigationOptions: {
+
+      title: 'Instructions'
+
+    }
+  },
+
+  Settings2: {
+    screen: Settings1,
+
+    navigationOptions: {
+
+      title: 'Parametres'
 
     }
 
