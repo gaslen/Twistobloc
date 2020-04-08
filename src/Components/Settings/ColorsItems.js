@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { StyleSheet, View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {Typo, ViewStyle, Colors} from '../../styles'
 
 
 class ColorItem extends React.Component {
@@ -45,9 +46,7 @@ class ColorItem extends React.Component {
         </View>
 
     )
-
   }
-
 }
 
 
@@ -57,21 +56,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 120
-
   },
 
   title_text: {
     fontWeight: 'bold',
-
-     fontSize: 32,
-
-     color: '#A9A9A9',
-
-     fontStyle: 'italic'
-
-
+    fontSize: Typo.largeFontSize,
+    color: Colors.light_grey,
+    fontStyle: 'italic'
   }
-
 })
 
 

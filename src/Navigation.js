@@ -9,6 +9,7 @@ import Main from './Components/Main'
 import Game1 from './Components/Games/Game1'
 import Game from './Components/Games/Game1/Game'
 import Players from './Components/Players/Players'
+import Rules from './Components/Games/Game1/Rules'
 
 const SearchStackNavigator = createStackNavigator({
 
@@ -27,6 +28,16 @@ const SearchStackNavigator = createStackNavigator({
 
   Game: {
     screen: Game
+  },
+
+  Rules1: {
+    screen: Rules,
+
+    navigationOptions: {
+
+      title: 'Instructions'
+
+    }
   },
 
   Settings: { // Ici j'ai appelé la vue "Search" mais on peut mettre ce que l'on veut. C'est le nom qu'on utilisera pour appeler cette vue

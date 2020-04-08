@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, View, TextInput, Button, Text, FlatList, TouchableOpacity } from 'react-native'
 import colors from "../../../Helpers/colors"
 import PlayerButton from '../../Players/PlayerButton'
+import {Typo, ViewStyle} from '../../../styles'
 
 
 class Game extends React.Component{
@@ -59,18 +60,8 @@ class Game extends React.Component{
 }
 
 styles = StyleSheet.create({
-  main_style: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text_style: {fontWeight: 'bold',
-
-       fontSize: 26,
-
-       color: '#A9A9A9',
-
-       fontStyle: 'italic'}
+  main_style: {...ViewStyle.main_style},
+  text_style: {...Typo.game}
 })
 
 export default Game

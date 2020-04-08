@@ -1,15 +1,16 @@
 import React from 'react'
-import { StyleSheet, View, TextInput, Button, Text, FlatList, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {Typo, ViewStyle} from '../styles'
 
 class Main extends React.Component{
   _Game1 = () => {
   this.props.navigation.navigate("Game1")
   }
   _Game2 = () => {
-    this.props.navigation.navigate('Game2')
+    // TODO
   }
   _Game3 = () => {
-    this.props.navigation.navigate("Game3")
+    // TODO
   }
   render(){
     return(
@@ -32,18 +33,8 @@ class Main extends React.Component{
 }
 
 styles = StyleSheet.create({
-  main_style: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
-  },
-  text_style: {    fontWeight: 'bold',
-
-       fontSize: 26,
-
-       color: '#666666',
-
-       fontStyle: 'italic'}
+  main_style: {...ViewStyle.main_style},
+  text_style: {...Typo.menu}
 })
 
 
