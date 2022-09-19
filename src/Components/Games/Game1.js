@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, TextInput, Button, Text, FlatList, TouchableOpacity } from 'react-native'
-import colors from "../../Helpers/colors"
+import colors from "../../Helpers/helper1"
 import PlayerButton from '../Players/PlayerButton'
-import {Typo, ViewStyle} from '../../styles'
+import {Typo, ViewStyle, Colors} from '../../styles'
 
 
 class Game extends React.Component{
@@ -52,7 +52,7 @@ class Game extends React.Component{
         // <PlayerButton navigation = {this.props.navigation}/>
       <View style={[styles.main_style, {backgroundColor: colors[col].id}]}>
         <TouchableOpacity style={styles.main_style} onPress={() => this._Generate_numbers()}>
-          <Text style={styles.text_style}>{this._sample_body_part()} {colors[col].fr}</Text>
+          <Text style={[styles.text_style]}>{this._sample_body_part()} {colors[col].fr}</Text>
         </TouchableOpacity>
       </View>
     )

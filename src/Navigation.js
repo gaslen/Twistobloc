@@ -5,6 +5,7 @@ import {createAppContainer } from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 
 import Settings1 from './Components/Settings/Settings1'
+import Settings2 from './Components/Settings/Settings2'
 import Main from './Components/Main'
 import SubMenu from './Components/submenu'
 import Game1 from './Components/Games/Game1'
@@ -73,7 +74,7 @@ const SearchStackNavigator = createStackNavigator({
   },
 
   Settings2: {
-    screen: Settings1,
+    screen: Settings2,
 
     navigationOptions: {
 

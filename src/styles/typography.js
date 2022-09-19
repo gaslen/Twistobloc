@@ -2,6 +2,7 @@ import * as Colors from './colors'
 
 export const mediumFontSize = 26
 export const largeFontSize = 38
+export const smallFontSize = 16
 
 export const menu = {
     fontWeight: 'bold',

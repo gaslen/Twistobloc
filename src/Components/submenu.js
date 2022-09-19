@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, TextInput, Button, Text, FlatList, TouchableOpacity } from 'react-native'
-import {Typo, ViewStyle} from '../styles'
+import {Typo, ViewStyle, Colors} from '../styles'
 
 class SubMenu extends React.Component{
   constructor(){

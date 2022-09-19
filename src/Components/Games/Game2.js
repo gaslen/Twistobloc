@@ -1,18 +1,32 @@
 import React from 'react'
 import { StyleSheet, View, TextInput, Button, Text, FlatList, TouchableOpacity } from 'react-native'
-import colors from "../../Helpers/colors"
+import actions from "../../Helpers/helper2"
 import PlayerButton from '../Players/PlayerButton'
-import {Typo, ViewStyle} from '../../styles'
+import {Typo, ViewStyle, Colors} from '../../styles'
 
 
 class Game2 extends React.Component{
   constructor(){
 
     super()
-    this.actions = ["Jambe gauche", "Jambe droite", "Bras gauche", "Bras droit", "Match", "pieds"]
+    this.actions = ["Jambe gauche", "Jambe droite", "Bras gauche", "Bras droit", "Match", "Pieds"]
+    this.sum_weight = 0
+    this.sum_weight_no_legs = 0 
+    this.sum_weight_no_match = 0 
+    this.sum_weight_no_legs_match = 0 
+    for (i in actions){
+      this.sum_weight += actions[i].weight
+      if (actions[i].id != "Match"){this.sum_weight_no_match += actions[i].weight}
+      if (actions[i].id != "Jambe droite" && actions[i].id != "Jambe gauche"){
+        this.sum_weight_no_legs += actions[i].weight
+        if (actions[i].id != "Match"){this.sum_weight_no_legs_match += actions[i].weight}
+      }
+    }
+
     this.state={
+      NumberBody : Math.random(),
         feet_dropped : false,
-        NumberBody : Math.random()
+        last_action : ''
     }
   }
 
@@ -24,10 +38,37 @@ class Game2 extends React.Component{
     })
   }
 
+  _sample_one_action = () => {
+    if (this.state.feet_dropped){
+      if (this.state.last_match){var sum = this.sum_weight_no_legs_match}
+      else{var sum = this.sum_weight_no_legs}
+    }
+    else{
+      if (this.state.last_match){var sum = this.sum_weight_no_match}
+      else{var sum = this.sum_weight}
+    }
+    console.log('\n')
+    console.log(sum, this.sum_weight)
+    var i, proba=0
+    for (i in actions){
+      if (this.state.feet_dropped && (actions[i].id == "Jambe droite" || actions[i].id == "Jambe gauche")){
+        continue
+      }
+      if (this.state.last_match && actions[i].id == "Match"){continue}
+      proba += (actions[i].weight / sum)
+      console.log(this.actions[i], this.state.NumberBody, proba)
+      if (this.state.NumberBody <= proba){
+        return this.actions[i]
+      }
+    }
+  }
+
 
   _sample_action = () => {
-    var action = this.actions[Math.floor(this.state.NumberBody * this.actions.length)]
-    if (action == "pieds"){
+    var action = this._sample_one_action()
+    this.state.last_match = (action == "Match")
+
+    if (action == "Pieds"){
         if (this.state.feet_dropped){
             action = "Reprendre les pieds"
             this.state.feet_dropped = false

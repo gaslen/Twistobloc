@@ -5,7 +5,7 @@ import React from 'react'
 
 import { StyleSheet, View, TextInput, Button, Text, FlatList } from 'react-native'
 
-import colors from "../../Helpers/colors"
+import colors from "../../Helpers/helper1"
 
 import ColorItem from "./ColorsItems"
 
@@ -29,10 +29,6 @@ class Settings extends React.Component {
           renderItem={({item}) => <ColorItem color={item}/>}
 
         />
-        <View style={flex=1,backgroundColor="red"}>
-
-
-        </View>
       </View>
 
     )
